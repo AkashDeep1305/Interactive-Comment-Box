@@ -1,7 +1,7 @@
 # Interactive Comment Box Web App
 
 An interactive chat-like message box built with HTML, CSS, JavaScript, and Flask backend, backed by MySQL for message storage.  
-All messages are automatically exported to timestamped Excel files after every add or delete.
+All messages are automatically exported to timestamped CSV files after every add or delete.
 
 ---
 
@@ -11,7 +11,7 @@ All messages are automatically exported to timestamped Excel files after every a
 - Interactive Comment box UI with nice styling
 - Users can **send messages** and see all others' messages
 - Messages are stored in **MySQL**
-- Every change (add/delete) auto-exports to a new timestamped Excel file in `exports/`
+- Every change (add/delete) auto-exports to a new timestamped CSV file in `exports/`
 - No manual export button (everything happens automatically)
 - Simple setup — easy to run locally
 
