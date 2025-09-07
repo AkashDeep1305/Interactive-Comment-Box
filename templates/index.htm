@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Comment Box</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Interactive Comment Box</h1>
+            <div class="actions">
+                <button id="refreshBtn" title="Refresh messages">⟳ Refresh</button>
+            </div>
+        </header>
+
+
+        <section class="composer">
+            <div class="username-row">
+                <label>Your name: <span id="displayUsername" class="display-username">(not set)</span></label>
+                <button id="changeNameBtn" class="small">Change</button>
+            </div>
+            <textarea id="content" rows="3" placeholder="Type your message..."></textarea>
+            <div class="composer-actions">
+                <button id="sendBtn">Send</button>
+                <span id="status" class="status"></span>
+            </div>
+        </section>
+
+
+        <section class="toolbar">
+            <input id="search" type="text" placeholder="Search messages..." />
+            <select id="filterUser">
+                <option value=""></option>
+            </select>
+        </section>
+
+
+        <section class="message-list" id="messageList"></section>
+    </div>
+
+
+    <!-- Username modal -->
+    <div id="usernameModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Welcome — enter your name</h2>
+            <input id="modalUsername" type="text" maxlength="100" placeholder="Your name" />
+            <div class="modal-actions">
+                <button id="modalSave">Save</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Message template -->
+    <template id="messageItemTpl">
+        <article class="message">
+            <div class="meta">
+                <span class="user"></span>
+                <time class="time"></time>
+            </div>
+            <p class="text"></p>
+            <button class="delete" title="Delete">✕</button>
+        </article>
+    </template>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

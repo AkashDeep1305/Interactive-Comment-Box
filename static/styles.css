@@ -1,0 +1,246 @@
+:root {
+    --bg: #0f172a;
+    --panel: #111827;
+    --muted: #94a3b8;
+    --text: #e5e7eb;
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --card: #1f2937;
+    --border: #374151;
+    --modal-bg: rgba(0, 0, 0, 0.6);
+    --modal-panel: #ffffff;
+    --modal-accent: #4a90e2;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Segoe UI, Roboto, Helvetica, Arial;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 880px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header .actions {
+    display: flex;
+    gap: 8px;
+}
+
+header button {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background: var(--accent);
+    color: #052e16;
+}
+
+.composer {
+    background: var(--panel);
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid var(--card);
+}
+
+.username-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.display-username {
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.small {
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.small:hover {
+    background: var(--accent);
+    color: #052e16;
+}
+
+.composer textarea {
+    width: 100%;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 8px;
+    resize: vertical;
+}
+
+.composer-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#sendBtn {
+    background: var(--accent);
+    color: #052e16;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    opacity: 0.9;
+}
+
+.status {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    margin: 14px 0;
+    flex-wrap: wrap;
+}
+
+.toolbar input,
+.toolbar select {
+    flex: 1;
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    min-width: 200px;
+}
+
+.message-list {
+    display: grid;
+    gap: 10px;
+}
+
+.message {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--card);
+    border-radius: 14px;
+    padding: 12px 44px 12px 12px;
+}
+
+.message .meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.message .text {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.message .delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.message .delete:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--modal-bg);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--modal-panel);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #111;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+}
+
+.modal-content button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: var(--modal-accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.modal-content button:hover {
+    background: #357ab8;
+}
